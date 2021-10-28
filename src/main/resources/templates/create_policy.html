@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text=center">Add New Policy</h1>
+            <div class="card-body">
+                <form th:action="@{/policys}" th:object="${policy}" method="POST">
+                    <div class="form-group">
+                        <label>Policy Type</label>
+                        <input
+                                type="text"
+                                name="policyType"
+                                th:field="*{policyType}"
+                                class="form-control"
+                                placeholder="Enter policyType"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Policy Time period</label>
+                        <input
+                                type="text"
+                                name="timeperiod"
+                                th:field="*{timeperiod}"
+                                class="form-control"
+                                placeholder="Enter timeperiod"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Policy Total Amount</label>
+                        <input
+                                type="text"
+                                name="totalAmount"
+                                th:field="*{totalAmount}"
+                                class="form-control"
+                                placeholder="Enter totalAmount"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>paymentOption</label>
+                        <input
+                                type="text"
+                                name="paymentOption"
+                                th:field="*{paymentOption}"
+                                class="form-control"
+                                placeholder="Enter paymentOption"
+                        />
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" align='center' class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

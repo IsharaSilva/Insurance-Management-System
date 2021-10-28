@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" th:href="@{/}">Insurance Management System</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home Page</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/clients}">Client Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/vehicles}">Vehicle Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/policys}">Insurance plan types</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <h1>View Policys Details</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/policys/new}" class="btn btn-primary btn-sm mb-3">Add New Policy</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Policy Id</th>
+            <th>Policy Type</th>
+            <th>Time period</th>
+            <th>Total Amount</th>
+            <th>Payment Option</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="policy: ${policys}">
+            <td th:text="${policy.id}"></td>
+            <td th:text="${policy.policyType}"></td>
+            <td th:text="${policy.timeperiod}"></td>
+            <td th:text="${policy.totalAmount}"></td>
+            <td th:text="${policy.paymentOption}"></td>
+            <td>
+                <a th:href="@{/policys/{id}(id=${policy.id})}"
+                   class="btn btn-warning">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
