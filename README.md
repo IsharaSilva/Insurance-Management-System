@@ -1,8 +1,5 @@
 # Insurance-Management-System
-Insurance Management System provide details about Client, Vehicle and Policy with CRUD Operations(create, View, Update and Delete).
-It easily helps to add new clients, their vehicle detail, update,delete those details and client can view policy details using this system.
-Spring boot and MySQL use as technologies for the implementation of this application. In
-this project used Thymeleaf as a template for interaction between HTML files and Java Classes.
+
 
 Database Name:Insurancesystemdb
 3 Tables:
@@ -12,14 +9,6 @@ policys
 
 
 Navigation bar is enable. Thus, after browse Localhost:8080, then easily can view vehicle and policy details using navigation button.
-
-RUN:
-Localhost:8080
-
-or
-Localhost:8080/clients
-Localhost:8080/vehicles
-Localhost:8080/policys
 
 In source code, there are several 
 
